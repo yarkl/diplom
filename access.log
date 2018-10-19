@@ -462,3 +462,7 @@
 127.0.0.1 - - [19/Oct/2018:20:26:27 +0300] "GET / HTTP/1.1" 200 1053 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"
 127.0.0.1 - - [19/Oct/2018:20:26:45 +0300] "GET / HTTP/1.1" 200 1055 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"
 127.0.0.1 - - [19/Oct/2018:20:26:45 +0300] "GET /index2.php HTTP/1.1" 200 1403 "http://diplom.local/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"
+127.0.0.1 - - [19/Oct/2018:20:32:41 +0300] "GET / HTTP/1.1" 200 1052 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"
+127.0.0.1 - - [19/Oct/2018:20:32:41 +0300] "GET /index2.php HTTP/1.1" 200 1403 "http://diplom.local/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"
+127.0.0.1 - - [19/Oct/2018:20:32:44 +0300] "GET / HTTP/1.1" 200 1051 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"
+127.0.0.1 - - [19/Oct/2018:20:32:44 +0300] "GET /index2.php HTTP/1.1" 200 1403 "http://diplom.local/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"
