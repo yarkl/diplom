@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db366fb1-41d6-403d-8da1-18def02a7191" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/access.log" beforeDir="false" afterPath="$PROJECT_DIR$/access.log" afterDir="false" />
+=======
+>>>>>>> 7693cbf53329d22bcb46cadd6d893ed1846fc8ad
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="390">
-              <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+              <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -151,12 +154,20 @@
       <updated>1539928906858</updated>
       <workItem from="1539928910378" duration="1173000" />
       <workItem from="1539931319328" duration="14623000" />
+<<<<<<< HEAD
       <workItem from="1539969741067" duration="1595000" />
+=======
+      <workItem from="1539969741067" duration="1315000" />
+>>>>>>> 7693cbf53329d22bcb46cadd6d893ed1846fc8ad
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="17391000" />
+=======
+    <option name="totallyTimeSpent" value="17111000" />
+>>>>>>> 7693cbf53329d22bcb46cadd6d893ed1846fc8ad
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="106" width="1151" height="836" extended-state="0" />
@@ -240,7 +251,11 @@
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
+<<<<<<< HEAD
           <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+=======
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+>>>>>>> 7693cbf53329d22bcb46cadd6d893ed1846fc8ad
         </state>
       </provider>
     </entry>
