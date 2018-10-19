@@ -30,7 +30,9 @@
 <script type="text/javascript">
     var nodes,edges,json;
     data = $.get('/index2.php',function (response) {
+        console.log(response);
         json = $.parseJSON(response);
+        console.log(json);
         console.log(json.labels);
         labels = [];
         $.each(json.labels, function(index, event) {
