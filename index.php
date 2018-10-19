@@ -29,7 +29,7 @@
     crossorigin="anonymous"></script>
 <script type="text/javascript">
     var nodes,edges,json;
-    data = $.get('http://diplom.local/index2.php',function (response) {
+    data = $.get('https://diplom.local/index2.php',function (response) {
         json = $.parseJSON(response);
         console.log(json.labels);
         labels = [];
