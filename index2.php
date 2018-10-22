@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 require dirname(__FILE__). '/vendor/autoload.php';
-var_dump(\App\Concept::all());
+//var_dump(\App\Concept::all());
 
 $link = new mysqli("127.0.0.1", "root", "root", "diplom");
 $link->set_charset("utf8");
@@ -14,7 +14,7 @@ if (!$link) {
     echo "Текст ошибки error: " . mysqli_connect_error() . PHP_EOL;
     exit;
 }
-function sql ($id){
+function sql (){
     return "
          SELECT t1.id,t1.concept,t2.found_id as pid FROM concepts t1
 		 LEFT JOIN CinC t2 on t1.id = t2.source_id;
@@ -22,7 +22,7 @@ function sql ($id){
     ";
 
 };
-$query = $link->query(sql(2));
+$query = $link->query(sql());
 
 if(!$query){
     echo "Ошибка: Not correct query" . PHP_EOL;

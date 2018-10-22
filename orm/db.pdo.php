@@ -1,6 +1,6 @@
 <?
 
-require dirname(__FILE__)."/db_connect.php";
+require dirname(__FILE__) . "/db_connect.php";
 
 
 
@@ -341,4 +341,4 @@ Database::get()->debugMode = false;
 
 
 
-require dirname(__FILE__)."/db_init.php";
+//require dirname(__FILE__)."/db_init.php";
