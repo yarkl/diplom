@@ -1,5 +1,9 @@
 <?php
+
 namespace Orm;
+
+require dirname(dirname(__FILE__))."/db/db.pdo.php";
+
 /**
  * Клас для побудови sql-запитів
  *

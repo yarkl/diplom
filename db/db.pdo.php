@@ -2,7 +2,6 @@
 
 require dirname(__FILE__)."/db_connect.php";
 
-use Orm\SQL;
 
 
 global $SQLQCount;
@@ -342,4 +341,4 @@ Database::get()->debugMode = false;
 
 
 
-require dirname(__FILE__)."/../app/db.connect/db_init.php";
+require dirname(__FILE__)."/db_init.php";

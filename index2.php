@@ -1,10 +1,10 @@
 <?php
-header("Access-Control-Allow-Origin: X-Requested-With");
-header("Access-Control-Allow-Headers: X-Requested-With");
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
+require dirname(__FILE__). '/vendor/autoload.php';
+var_dump(\App\Concept::all());
 
 $link = new mysqli("127.0.0.1", "root", "root", "diplom");
 $link->set_charset("utf8");
@@ -16,7 +16,7 @@ if (!$link) {
 }
 function sql ($id){
     return "
-         SELECT t1.id,t1.concept,t2.found_id as pid,t1.searchConceptsCalled  FROM concepts t1
+         SELECT t1.id,t1.concept,t2.found_id as pid FROM concepts t1
 		 LEFT JOIN CinC t2 on t1.id = t2.source_id;
 		 
     ";
@@ -37,16 +37,6 @@ while ($row = $query->fetch_assoc()) {
 
 mysqli_close($link);
 
-function random_color_part() {
-    return str_pad( dechex( mt_rand( 0, 255 ) ), 2, '0', STR_PAD_LEFT);
-}
-
-function random_color() {
-    return random_color_part() . random_color_part() . random_color_part();
-}
-
-random_color();
-
 
 $array = array();
 $labels = [];
@@ -56,6 +46,7 @@ $array = array();
 function recursive($data, $pid = 2, $level = 0){
     global $array;
     global $labels;
+
     foreach ($data as $row)   {
         if ($row['pid'] == $pid)   {
 
@@ -66,7 +57,7 @@ function recursive($data, $pid = 2, $level = 0){
             $_label['id'] = (int)$row['id'];
             $_label['label'] = $row['concept'];
             $_label['group']    = $pid;
-            $_label['value']    = $row['searchConceptsCalled'];
+            $_label['value']    = count($data);
             //$_label['color'] = random_color();
             $labels [] = $_label;
 
