@@ -15,7 +15,7 @@ if (!$link) {
 }
 function sql ($id){
     return "
-            SELECT t3.id as pid,t3.concept as parent_concept,t1.id,t1.concept FROM concepts t1
+            SELECT t3.id as pid,t3.concept as parent_concept,t1.id,t1.concept,t1.searchConceptsCalled FROM concepts t1
             INNER JOIN CinC t2 on t1.id = t2.source_id 
             INNER JOIN concepts t3 on t2.found_id = t3.id
             WHERE t3.id = $id;
@@ -53,6 +53,9 @@ function recursive($data, $pid = 2, $level = 0){
             unset($_label);
             $_label['id'] = (int)$row['id'];
             $_label['label'] = $row['concept'];
+            $_label['group']    = $pid;
+            $_label['value']    = $row['searchConceptsCalled'];
+
             $labels [] = $_label;
             $array[] = $_row; //
 

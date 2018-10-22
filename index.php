@@ -57,23 +57,28 @@
         });
         console.log(nodes);
 
-        // nodes = [];
-        // $.each(json.labels, function(data) {
-        //     let iam = $(this);
-        //     nodes.push({id:iam[0].id,label:iam[0].label});
-        // });
-        // edges = [];
-        // $.each(json.nodes, function(data) {
-        //     let iam = $(this);
-        //     edges.push({id:iam[0].from,to:iam[0].to});
-        // });
+        var options = {
+            nodes: {
+                shape: 'dot',
+                size: 40,
+                font: {
+                    size: 15,
+                    color: 'black'
+                },
+                borderWidth: 2
+            },
+            edges: {
+                width: 2
+            },
+            //physics: false
+        };
 
         var container = document.getElementById('graph');
         var data = {
             nodes: labels,
             edges: nodes,
         };
-        var graph = new vis.Network(container, data, {});
+        var graph = new vis.Network(container, data, options);
     });
 
 </script>
