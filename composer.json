@@ -1,7 +1,8 @@
 {
   "autoload": {
     "psr-4": {
-      "Orm\\": "app"
+      "Orm\\": "orm",
+      "App\\": "app"
     }
   }
 }

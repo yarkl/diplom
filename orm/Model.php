@@ -1,5 +1,5 @@
 <?php
-
+namespace Orm;
 abstract class Model {
 
 	protected  	$table;

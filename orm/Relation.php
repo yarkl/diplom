@@ -1,4 +1,5 @@
 <?php
+namespace Orm;
 /**
  * Class Relation
  * Потрібен для опису відношення для Моделей

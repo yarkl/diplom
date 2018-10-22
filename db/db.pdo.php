@@ -1,8 +1,8 @@
 <?
 
-require dirname(__FILE__)."/../app/db.connect/db_connect.php";
-require "SQL.php";
-require "RawModel.php";
+require dirname(__FILE__)."/db_connect.php";
+
+use Orm\SQL;
 
 
 global $SQLQCount;

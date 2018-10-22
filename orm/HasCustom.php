@@ -1,5 +1,5 @@
 <?php
-
+namespace Orm;
 /**
  * Class HasCustom
  * Для кастомних відношень.

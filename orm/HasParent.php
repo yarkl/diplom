@@ -1,4 +1,5 @@
 <?php
+namespace Orm;
 /**
  * Class HasParent
  */

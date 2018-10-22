@@ -1,4 +1,6 @@
 <?php
+namespace Orm;
+
 /**
  * Class BelongsToMany
  */

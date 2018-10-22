@@ -1,5 +1,5 @@
 <?php
-
+namespace Orm;
 class HasMany extends Relation{
 
     protected $foreignKey;

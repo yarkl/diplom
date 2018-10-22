@@ -2404,3 +2404,7 @@
 [Fri Oct 19 12:50:49.519470 2018] [php7:notice] [pid 1769] [client 127.0.0.1:47694] PHP Notice:  Array to string conversion in /var/www/diplom/index2.php on line 78
 [Fri Oct 19 12:50:49.519475 2018] [php7:notice] [pid 1769] [client 127.0.0.1:47694] PHP Notice:  Array to string conversion in /var/www/diplom/index2.php on line 78
 [Fri Oct 19 12:50:49.519479 2018] [php7:notice] [pid 1769] [client 127.0.0.1:47694] PHP Notice:  Array to string conversion in /var/www/diplom/index2.php on line 78
+[Mon Oct 22 09:04:12.619562 2018] [php7:error] [pid 4501] [client 127.0.0.1:54310] PHP Fatal error:  Uncaught Error: Class 'Arm\\Concept' not found in /var/www/diplom/index2.php:8\nStack trace:\n#0 {main}\n  thrown in /var/www/diplom/index2.php on line 8, referer: http://diplom.local/
+[Mon Oct 22 09:04:21.582018 2018] [php7:error] [pid 4502] [client 127.0.0.1:54332] PHP Fatal error:  Uncaught Error: Class 'Arm\\Concept' not found in /var/www/diplom/index2.php:8\nStack trace:\n#0 {main}\n  thrown in /var/www/diplom/index2.php on line 8
+[Mon Oct 22 09:04:36.638748 2018] [php7:error] [pid 4504] [client 127.0.0.1:54334] PHP Fatal error:  Uncaught Error: Class 'Arm\\Concept' not found in /var/www/diplom/index2.php:8\nStack trace:\n#0 {main}\n  thrown in /var/www/diplom/index2.php on line 8
+[Mon Oct 22 09:04:37.766373 2018] [php7:error] [pid 4504] [client 127.0.0.1:54334] PHP Fatal error:  Uncaught Error: Class 'Arm\\Concept' not found in /var/www/diplom/index2.php:8\nStack trace:\n#0 {main}\n  thrown in /var/www/diplom/index2.php on line 8
