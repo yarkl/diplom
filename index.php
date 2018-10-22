@@ -59,16 +59,29 @@
         var options = {
             nodes: {
                 shape: 'dot',
-                size: 40,
+                size: 60,
                 font: {
-                    size: 15,
+                    size: 10,
                     color: 'black'
                 },
                 borderWidth: 2
             },
             edges: {
-                width: 2
-            },
+                width: 2,
+                scaling:{
+                    label: true,
+                },
+
+                arrows: {
+                    to:     {enabled: false, scaleFactor:1, type:'arrow'},
+                    middle: {enabled: false, scaleFactor:1, type:'arrow'},
+                    from:   {enabled: true, scaleFactor:1, type:'arrow'}
+                },
+                selfReferenceSize: 10,
+                length: 20,
+                dashes:true
+                },
+
             //physics: false
         };
 

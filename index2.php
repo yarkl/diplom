@@ -57,6 +57,7 @@ function recursive($data, $pid = 2, $level = 0){
             $_label['id'] = (int)$row['id'];
             $_label['label'] = $row['concept'];
             $_label['group']    = $pid;
+           //$_label['cid']    = $pid;
             $_label['value']    = count($data);
             //$_label['color'] = random_color();
             $labels [] = $_label;
