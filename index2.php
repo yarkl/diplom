@@ -16,10 +16,10 @@ if (!$link) {
 }
 function sql ($id){
     return "
-          SELECT t1.id,t1.concept,t2.found_id as pid FROM concepts t1
-		  LEFT JOIN CinC t2 on t1.id = t2.source_id;
-           
-        ";
+         SELECT t1.id,t1.concept,t2.found_id as pid,t1.searchConceptsCalled  FROM concepts t1
+		 LEFT JOIN CinC t2 on t1.id = t2.source_id;
+		 
+    ";
 
 };
 $query = $link->query(sql(2));
@@ -37,11 +37,21 @@ while ($row = $query->fetch_assoc()) {
 
 mysqli_close($link);
 
+function random_color_part() {
+    return str_pad( dechex( mt_rand( 0, 255 ) ), 2, '0', STR_PAD_LEFT);
+}
+
+function random_color() {
+    return random_color_part() . random_color_part() . random_color_part();
+}
+
+random_color();
+
 
 $array = array();
 $labels = [];
 array_push($labels,['id' => 2,'label'=> 'Позвоночник']);
-$array = array();  //выходной массив
+$array = array();
 
 function recursive($data, $pid = 2, $level = 0){
     global $array;
@@ -51,9 +61,13 @@ function recursive($data, $pid = 2, $level = 0){
 
             $_row['from']    = $pid;
             $_row['to']    = $row['id'];
+            //$_row['value']    = $row['searchConceptsCalled'];
             $array[] = $_row;
             $_label['id'] = (int)$row['id'];
             $_label['label'] = $row['concept'];
+            $_label['group']    = $pid;
+            $_label['value']    = $row['searchConceptsCalled'];
+            //$_label['color'] = random_color();
             $labels [] = $_label;
 
 
@@ -67,7 +81,3 @@ recursive($oldArr);
 sort($array);
 
 echo json_encode(['labels' => $labels,'nodes' => $array],JSON_UNESCAPED_UNICODE);
-
-//echo "Соединение с MySQL установлено!" . PHP_EOL;
-//echo "Информация о сервере: " . mysqli_get_host_info($link) . PHP_EOL;
-
