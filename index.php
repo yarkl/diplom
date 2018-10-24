@@ -30,7 +30,9 @@
 <script type="text/javascript">
     var nodes,edges,json;
     //Делаем гет запрос на index2.php и в свойстов response записываем результат
+
     // json_encode(['labels' => $labels,'nodes' => $array],JSON_UNESCAPED_UNICODE); этой функции из index2.php
+
     data = $.get('/index2.php',function (response) {
         //Это для вывода в коносоль браузера
         console.log(response);
