@@ -6,6 +6,7 @@ error_reporting(E_ALL);
 require dirname(__FILE__). '/vendor/autoload.php';
 //var_dump(\App\Concept::all());
 
+
 $link = new mysqli("127.0.0.1", "root", "root", "diplom");
 $link->set_charset("utf8");
 if (!$link) {
@@ -16,8 +17,12 @@ if (!$link) {
 }
 function sql (){
     return "
-         SELECT t1.id,t1.concept,t2.found_id as pid FROM concepts t1
-		 LEFT JOIN CinC t2 on t1.id = t2.source_id;
+          SELECT t1.concept,t1.id,t2.found_id as pid FROM concepts t1
+          LEFT JOIN CinC t2 on t1.id = t2.source_id 
+          WHERE t2.found_id = ( SELECT MAX(t21.found_id) as pid FROM concepts t15
+		  LEFT JOIN CinC t21 on t15.id = t21.source_id 
+          WHERE t15.concept = t1.concept ORDER BY t15.id)
+          ORDER BY t1.id;
 		 
     ";
 
@@ -46,6 +51,8 @@ $array = array();
 function recursive($data, $pid = 2, $level = 0){
     global $array;
     global $labels;
+
+
 
     foreach ($data as $row)   {
         if ($row['pid'] == $pid)   {
