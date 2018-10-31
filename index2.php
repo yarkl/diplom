@@ -42,7 +42,6 @@ while ($row = $query->fetch_assoc()) {
 
 mysqli_close($link);
 
-
 $array = array();
 $labels = [];
 array_push($labels,['id' => 2,'label'=> 'Позвоночник']);
