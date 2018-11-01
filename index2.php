@@ -3,7 +3,9 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
 require dirname(__FILE__). '/vendor/autoload.php';
+require 'dd.php';
 //var_dump(\App\Concept::all());
 
 $link = new mysqli("127.0.0.1", "root", "root", "diplom");
@@ -16,10 +18,11 @@ if (!$link) {
 }
 function sql (){
     return "
-         SELECT t1.id,t1.concept,t2.found_id as pid FROM concepts t1
-		 LEFT JOIN CinC t2 on t1.id = t2.source_id;
-		 
-    ";
+         SELECT t1.concept as p_concept,t3.concept,t2.from_id as f, t2.to_id as t FROM CtoC t2
+         inner join concepts t1 on t2.from_id = t1.id
+         inner join concepts t3 on t2.to_id = t3.id
+         order by from_id;
+         ";
 
 };
 $query = $link->query(sql());
@@ -38,38 +41,13 @@ while ($row = $query->fetch_assoc()) {
 mysqli_close($link);
 
 
-$array = array();
-$labels = [];
-array_push($labels,['id' => 2,'label'=> 'Позвоночник']);
-$array = array();
 
-function recursive($data, $pid = 2, $level = 0){
-    global $array;
-    global $labels;
+$rec = new \App\Recursive($oldArr);
+$rec->processArray(2);
+$rec->removeParentTo();
 
-    foreach ($data as $row)   {
-        if ($row['pid'] == $pid)   {
-
-            $_row['from']    = $pid;
-            $_row['to']    = $row['id'];
-            //$_row['value']    = $row['searchConceptsCalled'];
-            $array[] = $_row;
-            $_label['id'] = (int)$row['id'];
-            $_label['label'] = $row['concept'];
-            $_label['group']    = $pid;
-           //$_label['cid']    = $pid;
-            $_label['value']    = count($data);
-            //$_label['color'] = random_color();
-            $labels [] = $_label;
-
-
-            recursive($data, $row['id'], $level + 1);
-        }
-    }
-}
-recursive($oldArr);
 //echo json_encode($labels,JSON_UNESCAPED_UNICODE);
 //echo json_encode($array);
-sort($array);
+//sort($rec->arr);
 
-echo json_encode(['labels' => $labels,'nodes' => $array],JSON_UNESCAPED_UNICODE);
+echo json_encode(['labels' => $rec->labels,'nodes' => $rec->arr],JSON_UNESCAPED_UNICODE);

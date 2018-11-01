@@ -87,9 +87,9 @@
                 },
 
                 arrows: {
-                    to:     {enabled: false, scaleFactor:1, type:'arrow'},
+                    to:     {enabled: true, scaleFactor:1, type:'arrow'},
                     middle: {enabled: false, scaleFactor:1, type:'arrow'},
-                    from:   {enabled: true, scaleFactor:1, type:'arrow'}
+                    from:   {enabled: false, scaleFactor:1, type:'arrow'}
                 },
                 selfReferenceSize: 10,
                 length: 20,
