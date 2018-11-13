@@ -40,6 +40,7 @@ class GraphService
             $_row['to']    = $id;
             $_label['id'] = $id;
             $_label['label'] = $row->concept;
+            $_label['url'] = url("/show/{$id}");
             $_label['group']    = $pid;
             $_label['value']    = count($arr);
             array_push($this->labels,$_label);
@@ -47,7 +48,11 @@ class GraphService
 
             $this->processArray( $id, $this->array,$level + 1);
         }
+        return $this;
+    }
 
+    public function decode(){
+        return json_encode(['nodes' => $this->getLabels(),'edges' => $this->getReadyArr()],JSON_UNESCAPED_UNICODE);
     }
 
     public function getLabels(){

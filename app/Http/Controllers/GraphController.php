@@ -13,10 +13,18 @@ use App\Services\GraphService;
 
 class GraphController
 {
+    private $graphService;
+
+    public function __construct(GraphService $service)
+    {
+        $this->graphService = $service;
+    }
+
     public function graph(){
-        $graphService = new GraphService();
-        $graphService->processArray(2);
-        //dd($graphService->getLabels());
-        return json_encode(['labels' => $graphService->getLabels(),'nodes' => $graphService->getReadyArr()],JSON_UNESCAPED_UNICODE);
+        return $this->graphService->processArray(2)->decode();
+    }
+
+    public function show($id){
+        return $this->graphService->processArray($id)->decode();
     }
 }

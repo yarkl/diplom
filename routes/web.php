@@ -16,4 +16,5 @@
 //});
 
 $router->get('/', 'HomeController@home');
+$router->get('/show/{id}', 'GraphController@show');
 $router->get('/graph', 'GraphController@graph');
