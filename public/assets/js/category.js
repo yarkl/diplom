@@ -1,5 +1,7 @@
-(function () {
-    var data,nodes,json,edges;
+$(document).ready(function () {
+    let uri = location.pathname;
+    let split  = uri.split('/');
+    var data,nodes,json,options;
 
     json = function(scriptUrl = '/graph'){
         data = function(){
@@ -37,7 +39,7 @@
         };
     };
 
-    var options = {
+    options = {
         nodes: {
             shape: 'dot',
             size: 60,
@@ -68,7 +70,7 @@
 
     var container = document.getElementById('graph');
 
-    var graph = new vis.Network(container, json(), options);
+    var graph = new vis.Network(container, json('/json/'+split[2]), options);
 
     graph.on("selectNode", function (params) {
         if (params.nodes.length === 1) {
@@ -78,5 +80,4 @@
             }
         }
     });
-
-}());
+});

@@ -24,7 +24,12 @@ class GraphController
         return $this->graphService->processArray(2)->decode();
     }
 
-    public function show($id){
+    public function show(){
+        return view('category');
+    }
+
+    public function json($id){
+
         return $this->graphService->processArray($id)->decode();
     }
 }

@@ -16,5 +16,6 @@
 //});
 
 $router->get('/', 'HomeController@home');
+$router->get('/json/{id}', 'GraphController@json');
 $router->get('/show/{id}', 'GraphController@show');
 $router->get('/graph', 'GraphController@graph');
