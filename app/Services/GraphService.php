@@ -23,7 +23,7 @@ class GraphService
     }
 
     private function getRows(){
-        return DB::select("SELECT t1.concept,t1.id,t2.found_id as pid,t3.concept as pcon FROM concepts t1
+        return DB::select("SELECT t1.concept,t1.id,t2.found_id as pid,t3.concept as pcon,type FROM concepts t1
           LEFT JOIN graph t2 on t1.id = t2.source_id 
           LEFT JOIN concepts t3 on t3.id = t2.found_id
           WHERE t2.found_id = ( SELECT MAX(t21.found_id) as pid FROM concepts t15
@@ -39,6 +39,10 @@ class GraphService
             $id = (int) $row->id;
             $_row['from']  = $pid;
             $_row['to']    = $id;
+            if($row->type == 'ctoc'){
+                $_row['dashes']  = true;
+            }
+            $_row['arrows']  = 'to';
             $_label['id'] = $id;
             $_label['label'] = $row->concept;
             $_label['url'] = url("/show/{$id}");

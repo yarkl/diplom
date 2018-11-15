@@ -53,14 +53,8 @@
                 label: true,
             },
 
-            arrows: {
-                to:     {enabled: true, scaleFactor:1, type:'arrow'},
-                middle: {enabled: false, scaleFactor:1, type:'arrow'},
-                from:   {enabled: false, scaleFactor:1, type:'arrow'}
-            },
             selfReferenceSize: 10,
             length: 20,
-            dashes:true
         },
 
         //physics: false
