@@ -41,6 +41,7 @@ class GraphService
             $_row['to']    = $id;
             if($row->type == 'ctoc'){
                 $_row['dashes']  = true;
+                $_row['color']  = ['color' => 'black'];
             }
             $_row['arrows']  = 'to';
             $_label['id'] = $id;
