@@ -10,7 +10,6 @@
                 dataType: 'json',
                 async: false,
                 success: function(data) {
-                    console.log(data);
                     result = data;
                 }
             });
@@ -28,6 +27,7 @@
                 nodes.push(event);
             }
         });
+        console.log(data.edges);
         nodes = new vis.DataSet(nodes);
 
         edges = new vis.DataSet(data.edges);

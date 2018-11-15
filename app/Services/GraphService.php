@@ -24,19 +24,19 @@ class GraphService
 
     private function getRows(){
         return DB::select("SELECT t1.concept,t1.id,t2.found_id as pid,t3.concept as pcon FROM concepts t1
-          LEFT JOIN CinC t2 on t1.id = t2.source_id 
+          LEFT JOIN graph t2 on t1.id = t2.source_id 
           LEFT JOIN concepts t3 on t3.id = t2.found_id
           WHERE t2.found_id = ( SELECT MAX(t21.found_id) as pid FROM concepts t15
-		  LEFT JOIN CinC t21 on t15.id = t21.source_id 
+		  LEFT JOIN graph t21 on t15.id = t21.source_id 
           WHERE t15.concept = t1.concept ORDER BY t15.id)
           ORDER BY t1.id;");
     }
 
     public function processArray($pid,$data = NULL,$level = 0){
         $arr = array_filter($this->array,function ($item) use ($pid){ return  $item->pid == $pid; });
-        foreach ($arr as $row)   {
+
+        foreach ($arr as $key => $row)   {
             $id = (int) $row->id;
-//            $this->removeParentTo($pid,$id);
             $_row['from']  = $pid;
             $_row['to']    = $id;
             $_label['id'] = $id;
@@ -55,6 +55,17 @@ class GraphService
             array_push($this->readyArr,$_row);
 
             $this->processArray( $id, $this->array,$level + 1);
+        }
+        return $this;
+    }
+
+    public function removeParentTo(){
+        foreach ($this->readyArr as $key => $item){
+            $arr = array_filter($this->readyArr,function ($data,$key) use($item){
+                if($data['from'] < $item['from'] && $data['to'] == $item['to']){
+                    unset($this->readyArr[$key]);
+                }
+            },ARRAY_FILTER_USE_BOTH);
         }
         return $this;
     }
