@@ -83,6 +83,7 @@ class GraphService
         return $this->labels;
     }
 
+
     public function getReadyArr(){
         return $this->readyArr;
     }

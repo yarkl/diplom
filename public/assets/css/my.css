@@ -1,0 +1,16 @@
+#graph {
+    width: 120vh;
+    height: 80vh;
+    border: 1px solid lightgray;
+}
+
+#ui-id-1{
+    position: absolute !important;
+    top: 8vh !important;
+    left: 82vh !important;
+    list-style-type: none;
+    border: 1px solid grey;
+    background-color: white;
+    width: 50vh;
+    z-index: 1;
+}

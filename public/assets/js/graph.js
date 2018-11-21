@@ -2,12 +2,20 @@
     var data,nodes,json,edges;
 
     json = function(scriptUrl = '/graph'){
+        let uri = location.pathname;
+        let split  = uri.split('/');
+        if(split.length == 3){
+            scriptUrl = '/json/'+split[2];
+            var category = $('#tags').val();
+            console.log(category);
+        }
         data = function(){
             let result = null;
             $.ajax({
                 url: scriptUrl,
                 type: 'get',
                 dataType: 'json',
+                data: {category:category},
                 async: false,
                 success: function(data) {
                     result = data;
@@ -27,7 +35,6 @@
                 nodes.push(event);
             }
         });
-        console.log(data.edges);
         nodes = new vis.DataSet(nodes);
 
         edges = new vis.DataSet(data.edges);

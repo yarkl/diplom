@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 
 use App\Services\GraphService;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class GraphController
@@ -29,7 +30,7 @@ class GraphController
         return view('category');
     }
 
-    public function json($id){
+    public function json(Request $request,$id){
         return $this->graphService->processArray($id)->removeParentTo()->decode();
     }
 
