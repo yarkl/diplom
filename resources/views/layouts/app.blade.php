@@ -21,13 +21,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Понятия <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/">Понятия <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Курс</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Про проект</a>
+                <a class="nav-link" href="/about">Про проект</a>
             </li>
         </ul>
         <form id="search" action="/show/0" class="form-inline my-2 my-lg-0">

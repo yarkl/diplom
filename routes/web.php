@@ -20,4 +20,5 @@ $router->get('/json/{id}', 'GraphController@json');
 $router->get('/show/{id}', 'GraphController@show');
 $router->get('/tags', 'TagsController@index');
 $router->get('/graph', 'GraphController@graph');
+$router->get('/about', 'AboutProjectController@index');
 $router->get('/restore', 'GraphController@restore');
