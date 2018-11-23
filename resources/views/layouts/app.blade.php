@@ -45,7 +45,9 @@
 <script src="{{ url('/assets/js/bootstrap.min.js') }}"></script>
 <script src="{{ url('/assets/js/vis.min.js') }}"></script>
 <script src="{{ url('/assets/js/graph.js') }}"></script>
+<script src="{{ url('/assets/js/bootstrap3-typeahead.min.js') }}"></script>
 <script src="{{ url('/assets/js/tags.js') }}"></script>
+
 
 </body>
 </html>

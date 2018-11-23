@@ -25,8 +25,8 @@ class TagsController extends Controller
         $arr = [];
         foreach ($this->graphService->getLabels() as $label) {
             unset($label['url'], $label['group'], $label['value']);
-            $_label['value'] = $label['id'];
-            $_label['label'] = $label['label'];
+            $_label['id'] = $label['id'];
+            $_label['name'] = $label['label'];
             array_push($arr,$_label);
         }
         return $arr;
