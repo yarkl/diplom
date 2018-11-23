@@ -33,7 +33,7 @@
 
         // default template
         menu: '<ul class="typeahead dropdown-menu" role="listbox"></ul>',
-        item: '<li><a class="dropdown-item" href="#" role="option"></a></li>',
+        item: '<li><a class="dropdown-item" href="#" role="option" style="font-size: 12px"></a></li>',
         headerHtml: '<li class="dropdown-header"></li>',
         headerDivider: '<li class="divider" role="separator"></li>',
         itemContentSelector:'a',

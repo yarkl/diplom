@@ -30,7 +30,7 @@
                 <a class="nav-link" href="/about">Про проект</a>
             </li>
         </ul>
-        <form id="search" action="/show/0" class="form-inline my-2 my-lg-0">
+        <form id="search" action="/show/0" class="form-inline my-2 my-lg-0" >
             <input id="tags" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0 " type="submit">Search</button>
         </form>
