@@ -71,6 +71,7 @@
 
     var graph = new vis.Network(container, json(), options);
 
+
     graph.on('click', function (params) {
         if (params.nodes.length === 1) {
             var node = nodes.get(params.nodes[0]);
@@ -105,6 +106,5 @@
     function onDoubleClick() {
         window.location.href = "http://pozvonochnik.org/concept:2"
     }
-
 
 }());
