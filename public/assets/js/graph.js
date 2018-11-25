@@ -72,39 +72,36 @@
     var graph = new vis.Network(container, json(), options);
 
 
-    graph.on('click', function (params) {
+    graph.on('click', onClick);
+    graph.on('doubleClick', onDoubleClick);
+
+    var doubleClickTime = 0;
+    var threshold = 200;
+
+    function onClick(params) {
+        var t0 = new Date();
+        if (t0 - doubleClickTime > threshold) {
+            setTimeout(function () {
+                if (t0 - doubleClickTime > threshold) {
+                    doOnClick(params);
+                }
+            },threshold);
+        }
+    }
+
+    function doOnClick(params) {
         if (params.nodes.length === 1) {
             var node = nodes.get(params.nodes[0]);
             if(node.url != undefined){
                 window.location.href = node.url;
             }
         }
-    });
-    graph.on('doubleClick', onDoubleClick);
-
-    var doubleClickTime = 0;
-    var threshold = 200;
-
-    function onClick() {
-        var t0 = new Date();
-        if (t0 - doubleClickTime > threshold) {
-            setTimeout(function () {
-                if (t0 - doubleClickTime > threshold) {
-                    graph.on('click', function (params) {
-                        if (params.nodes.length === 1) {
-                            var node = nodes.get(params.nodes[0]);
-                            if(node.url != undefined){
-                                window.location.href = node.url;
-                            }
-                        }
-                    });
-                }
-            },threshold);
-        }
     }
 
     function onDoubleClick() {
+        doubleClickTime = new Date();
         window.location.href = "http://pozvonochnik.org/concept:2"
+        console.log("execute onDoubleClick function");
     }
 
 }());
