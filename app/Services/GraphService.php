@@ -47,6 +47,7 @@ class GraphService
             $_label['id'] = $id;
             $_label['label'] = $row->concept;
             $_label['url'] = url("/show/{$id}");
+            $_label['url2'] = "https://pozvonochnik.org/concept:{$id}";
             $_label['group']    = $pid;
             $_label['value']    = count($arr);
             array_push($this->labels,$_label);
@@ -62,6 +63,7 @@ class GraphService
             $this->processArray( $id, $this->array,$level + 1);
         }
         return $this;
+
     }
 
     public function removeParentTo(){

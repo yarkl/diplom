@@ -98,9 +98,15 @@
         }
     }
 
-    function onDoubleClick() {
+    function onDoubleClick(params) {
         doubleClickTime = new Date();
-        window.location.href = "http://pozvonochnik.org/concept:2"
+        if (params.nodes.length === 1) {
+            var node = nodes.get(params.nodes[0]);
+            if(node.url2 != undefined){
+                console.log(node.url2);
+                window.location.href = node.url2
+            }
+        }
         console.log("execute onDoubleClick function");
     }
 
