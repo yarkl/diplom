@@ -2,7 +2,7 @@
     data = function(){
         let result = null;
         $.ajax({
-            url: '/tags',
+            url: '/course-tags',
             type: 'get',
             dataType: 'json',
             async: false,
@@ -56,7 +56,7 @@
         // delay between lookups
         delay: 0,
         updater: function(item) {
-            $( "#search" ).attr('action', '/show/' + item.id);
+            $( "#search" ).attr('action', '/course-show/' + item.show);
             return item;
         }
     });
