@@ -44,6 +44,7 @@ class CourseService
             );
         $this->parent($parent);
 
+
     }
 
     public function parent(array $data){
@@ -102,7 +103,7 @@ class CourseService
             $concepts = DB::connection('mysql2')
                 ->select(
                     "
-                            select  DISTINCT(thesis),concept_id from thesises t1 inner join concepts t2 on t1.concept_id = t2.id 
+                            select  DISTINCT(concept) as thesis,concept_id,concept_id from thesises t1 inner join concepts t2 on t1.concept_id = t2.id 
                             WHERE t1.view = '{$view[0]->view}' AND  thesis != \"\"
                         "
                 );
