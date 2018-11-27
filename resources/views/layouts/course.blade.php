@@ -24,7 +24,7 @@
                 <a class="nav-link" href="/">Понятия <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Курс</a>
+                <a class="nav-link" href="/course">Курс</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/about">Про проект</a>
